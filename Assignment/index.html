@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Bucket List</title>
+</head>
+<style>
+    body{
+        
+        font-family: 'Poppins', sans-serif;
+        background: radial-gradient(#fceabb, #f8b500);
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    h1{
+        background-color: #ff9800;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        font-size: 4em;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+    }
+
+    h2{
+        background-color: #ffeaa7;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        color: black;
+        font-size: 2em;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    h1,h2{
+         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+
+   audio, video {
+  display: block;
+  margin: 20px auto;
+  border: none; /* Let the container handle the border */
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 640px;
+}
+
+    ul,ol,li{
+        align-items: center;
+        list-style-position: inside;
+        justify-content: center;
+         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        
+        
+    }
+
+    .travel{
+        background: white;
+        border-radius: 15px;
+        box box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+        padding: 20px;
+        width: 300px;
+        margin: auto;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .travel label{
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: 600;
+        color: #ff9800;
+    }
+    
+.travel select,
+.travel input[type="date"],
+.travel input[type="range"] {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+   
+    .container{
+       
+         background: #ff9800;
+         border-radius: 15px;
+         padding: 20px;
+         box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+         max-width: 900px;
+         margin: 20px auto;
+         line-height: 1.6;
+         
+         
+        }
+    
+
+    .container li ul{
+           background-color: #ffeaa7;
+           width: 90%;
+           max-width: 600px;
+           color: #2d3436;
+           border-radius: 15px;
+           padding: 20px;
+           box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+    } 
+
+    img {
+     width: 300px; 
+    height: 200px;
+    display: block; 
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+
+}
+
+.container li{
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-around; 
+  align-items: center; 
+  gap: 20px; 
+}
+
+.container ul{
+     
+  font-family: 'Poppins', sans-serif; 
+  font-size: 1.1em; 
+  font-weight: 600; 
+  color: #333; 
+  
+  text-align: center; 
+  padding: 0 10px; 
+  margin-top: 10px; 
+  margin-bottom: 5px; 
+
+  text-transform: capitalize; 
+  line-height: 1.4; /
+}
+
+table{
+    width: 60%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif; 
+}
+ 
+th {
+  background-color: #ff9800;
+  color: white;
+  padding: 15px;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-weight: 600;
+  background-color: #ffeaa7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.image-travel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-travel .photo{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+.image-travel p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  margin-top: 10px; 
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    max-width: 900px;
+    padding: 20px 70px;
+    margin: 20px auto;
+
+}
+.drop-zone{
+    border: 3px dashed #ff9800;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #555;
+    background-color: #fff7e6;
+    max-width: 500px;
+    margin: 20px auto;
+    cursor: pointer;
+    
+}
+
+.drop-zone:hover{
+    background-color: #ffe0b2;
+    border-color: #e65100;
+}
+
+.drop-zone.hint{
+  font-size: 0.9em;
+  font-weight: normal;
+  color: #888;
+  margin-top: 8px;
+}
+
+  
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 25px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 50px;
+}
+
+footer a {
+  color: #ffc107; /* A bright, contrasting link color */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: white;
+}
+
+
+</style>
+<body>
+<h1>Wanderlust Awaits</h1>
+<div class="container">
+    <ol >
+        <li><h2>Shimla</h2>
+            <ul>
+                <li><img src="images/Church.jpg" alt="Christ Church">Visit Christ Church</li>
+                <br>
+                <li><img src="images/annandale.jpg" alt="annandale">Annandale for relaxation and scenic views</li>
+                <br>
+                <li><img src="images/mallroad.jpg"alt="mallroad">Shopping on Mall road</li>
+            </ul>
+        </li>
+        <li><h2>Goa</h2>
+            <ul>
+                <li><img src="images/fort.jpg" alt="Portuguese forts"> Discover Portuguese forts</li>
+                <br>
+                <li><img src="images/sports.jpeg" alt="Water sports"> Indulge in water sports</li>
+                <br>
+                <li><img src="images/beach.jpeg" alt="Butterfly brach"> Explore Butterfly Beach</li>
+            </ul>
+        </li>
+        <li><h2>Ooty</h2>
+            <ul>
+                <li><img src="images/garden.jpeg" alt="garden"> Visiting the Botanical Garden</li>
+                <br>
+                <li><img src="images/lakes.jpg" alt="Ooty lakes"> Taking a boat ride on Ooty lake</li>
+                <br>
+                <li><img src="images/doddabetta-peak.jpg" alt="peak"> Enjoying the panoramic views from Doddabetta Peak</li>
+            </ul>
+        </li>
+        <li><h2>Munnar</h2>
+            <ul>
+                <li><img src="images/tea-gardens.jpg" alt="Tea garden"> Exploring Tea Gardens</li>
+                <br>
+                <li><img src="images/Kundala-Lake-Munnar-1.jpg" alt="Lakes"> Visiting waterfalls and lakes</li>
+                <br>
+                <li><img src="images/munnar-trekking.jpg" alt="Trekking"> Experiencing Trekking and hiking opportunities</li>
+            </ul>
+        </li>
+        <li><h2>Kodaikanal</h2>
+            <ul>
+                <li><img src="images/walk.jpg" alt="Coaker's walk"> Exploring Coaker's walk</li>
+                <br>
+                <li><img src="images/forest.jpg" alt="forest"> Enjoying the Pine forest</li>
+                <br>
+                <li><img src="images/falls.jpg" alt="falls"> Discovering Bear Shola Falls</li>
+            </ul>
+        </li>
+    </ol>
+    </div>
+    <br>
+    <br>
+    <h2>Places at a Glance</h2>
+    <table border="1px" align="center">
+        <tr>
+            <th>Place</th>
+            <th>Best time to visit</th>
+            <th>Budget(Approx.)</th>
+            <th>Rating(out of 5)</th>
+        </tr>
+        <tr>
+            <td>Ooty,Tamil Nadu</td>
+            <td>March-June, September-November</td>
+            <td>Rs.8000-15000</td>
+            <td>4.6</td>
+        </tr>
+        <tr>
+            <td>Shimla,Himachal Pradesh</td>
+            <td>March-June, October-February</td>
+            <td>Rs.10000-18000</td>
+            <td>4.7</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <h2>Your travel companion</h2>
+    <div class="image-travel">
+    <div class="photo">
+    <img src="images/Kodaikanal.jpg" alt="Goa" width="500px" height="300px">  
+     <p style="text-align: center;">Kodaikanal</p>
+     </div>
+     <div class="photo">
+     <img src="images/Goa.jpg" alt="Goa" width="500px" height="300px">
+     <p>Goa</p>
+     </div>
+     <div class="photo">
+     <img src="images/Munnar.jpg" alt="Goa" width="500px" height="300px" >
+     <p>Munnar</p>
+    </div>
+    </div>
+    <form class="travel">
+        <label>Choose a preferred travel season </label>
+        <select>
+            <option>Summer</option>
+            <option>Monsoon</option>
+            <option>Autumn</option>
+            <option>Winter</option>
+        </select>
+        <br>
+        <label>Choose your planned trip date</label>
+        <input type="date" name="dateoftrip">
+        <br>
+        <label>Give your budget preference</label>
+        <input type="range" name="budget" min="1000" max="50000" step="1000" value="1000">
+
+    </form>
+    <br>
+    <br>
+    <h2>Explore the world with ease</h2>
+    <div class="images" aria-label="Draggable travel images">
+      <img src="images/beach.jpeg" alt="Beach Destination" draggable="true">
+      <img src="images/mountains.jpeg" alt="Mountain Destination" draggable="true">
+      <img src="images/city.jpeg" alt="City Destination" draggable="true">
+    </div>
+
+  <!-- Drop zone (visual only; JS required for actual drop handling) -->
+    <div class="drop-zone" role="region" aria-label="Drop zone" style="align-items: center;">
+       Drop your favorite destination image here!
+    <div class="hint">(This is a visual drop zone. Enabling real drop/move requires JavaScript.)</div>
+  </div>
+  <br>
+  <br>
+  <h2>Sounds of a Gateway</h2>
+  <audio controls loop>
+    <source src= "C:\Users\hplap\Documents\Assignment\audio.mp3.mp3" type="audio/mpeg" autoplay loop>
+  </audio>
+  <br>
+  <br>
+
+  <video width="640" height="360" controls loop>
+  <source src="C:\Users\hplap\Documents\Assignment\video.mp4.mp4" type="video/mp4">
+  </video>
+  <br>
+  <br>
+  <footer>
+    <p>Wander and Wonder, All rights reserved</p>
+    <p>To explore the world
+        <br>
+        <a href="https://www.kayak.com/flights" target="_blank">Book flights</a>
+        <br>
+        <a href="https://www.going.com/flights" target="_blank">Book cheaper flights</a>
+        <br>
+        <a href="https://www.booking.com/" target="_blank">Book your hotels and destinations</a>
+
+    </p>
+  </footer>
+    
+
+</body>
+</html>
